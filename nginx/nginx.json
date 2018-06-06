@@ -9,7 +9,23 @@
   "instance_type": "t2.micro",
   "ssh_username": "ec2-user",
   "ami_name": "packer-nginx"
-   }
+       }
+],
+     "provisioners": [
+       {
+           
+           "type": "shell",
+           "inline": [
+             "sudo yum update",
+             "sudo yum installnginx -y",
+             "sudo service network restart"
+           ]
 
-   ] 
-}
+         }
+
+      ]
+      
+
+         
+      
+  
