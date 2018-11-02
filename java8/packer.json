@@ -1,0 +1,27 @@
+{
+    "builders":[
+        {
+            "type": "amazon-ebs",
+            "access_key": "MWEOMMHGGBNJKLKPOE",
+            "secret_key": "mjgGHJNGGHJdfjn",
+            "region": "ap-south-1",
+            "source_ami": "ami-17RYjnuG76",
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu",
+            "ami_name": "packer-java"
+          }
+    ],
+    "provisioners":[
+        {
+            "type": "shell",
+            "inline":[
+                "sudo apt-get update",
+                "sudo apt-get install default-jdk",
+				"sudo add-apt-repository ppa:webupd8team/java",
+				"sudo apt-get update",
+				"sudo apt-get install oracle-java8-installer"
+
+            ]
+        }
+    ]
+}
