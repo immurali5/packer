@@ -17,7 +17,7 @@
            "type": "shell",
            "inline": [
              "sudo yum update",
-             "sudo yum installnginx -y",
+             "sudo yum install nginx -y",
              "sudo service network restart"
            ]
 
